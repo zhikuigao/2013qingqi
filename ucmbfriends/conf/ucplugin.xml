@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin>
+	<!-- 插件名称 -->
+	<name>ucmbfriends plugin</name>
+	<!-- 插件加载类 -->
+	<class>qflag.ucstar.plugin.ucmbfriends.UcmbfriendsPluginModule</class>
+	<!-- 插件的说明 -->
+	<description>ucmbfriends plugin</description>
+	<author>rwli</author>
+	<version>1.0.0</version>
+	<date>2011-07-26</date>
+	<!-- 数据库版本号，如果<=0则表示没有数据库 -->
+	<dbversion>1</dbversion>
+	<!-- 排除一些不需要验证的页面 -->
+	<excludes>
+		<item>ucmbImageDownload.jsp</item>
+		<item>ucmbImageUpload.jsp</item>
+		<item>ucmbCover.jsp</item>
+		<item>ucmbShare.jsp</item>
+		<item>ucmbShareComment.jsp</item>
+		<item>ucmFriendsComment.jsp</item>
+		<item>ucmFriendsCover.jsp</item>
+		<item>ucmFriendsResource.jsp</item>
+		<item>ucmFriendsShare.jsp</item>
+		<item>ucmFriendsCommentData.jsp</item>
+		<item>ucmFriendsCoverData.jsp</item>
+		<item>ucmFriendsResourceData.jsp</item>
+		<item>ucmFriendsShareData.jsp</item>
+		<item>ucmbImageUploadTest.jsp</item>
+	</excludes>
+	<!-- webwork的action配置 -->
+	<!-- 
+	<xwork>
+		<package name="xwork-extension.xml" extends="webwork-default">
+			<interceptors>
+				<interceptor-stack name="inter">
+					<interceptor-ref name="params" />
+				</interceptor-stack>
+			</interceptors>
+			<action name="extensionList"
+				class="qflag.ucstar.audio.services.action.ExtensionAction" method="listPage">
+				<result name="success" type="dispatcher">/extension-manager.jsp</result>
+				<result name="error" type="dispatcher">/error.jsp</result>
+				<interceptor-ref name="model-driven" />
+				<interceptor-ref name="params" />
+			</action>
+		</package>
+	</xwork>
+	-->
+	<!-- 需要扩展的hibernate映射类 -->
+	<annoclasses>
+		<item>qflag.ucstar.zk.biz.pojo.UcmFriendsComment</item>
+		<item>qflag.ucstar.zk.biz.pojo.UcmFriendsCover</item>
+		<item>qflag.ucstar.zk.biz.pojo.UcmFriendsResource</item>
+		<item>qflag.ucstar.zk.biz.pojo.UcmFriendsShare</item>
+	</annoclasses>
+	<!-- 需要排除的样式页面 -->
+	<decorators>
+		<item>/ucstar_plugins/ucmbfriends/ucmbImageDownload.jsp*</item>
+		<item>/ucstar_plugins/ucmbfriends/ucmbImageUpload.jsp*</item>
+		<item>/ucstar_plugins/ucmbfriends/ucmbCover.jsp*</item>
+		<item>/ucstar_plugins/ucmbfriends/ucmbShare.jsp*</item>
+		<item>/ucstar_plugins/ucmbfriends/ucmbShareComment.jsp*</item>
+		<item>/ucstar_plugins/ucmbfriends/ucmFriendsCover.jsp*</item>
+		<item>/ucstar_plugins/ucmbfriends/ucmFriendsResource.jsp*</item>
+		<item>/ucstar_plugins/ucmbfriends/ucmFriendsComment.jsp*</item>
+		<item>/ucstar_plugins/ucmbfriends/ucmFriendsShare.jsp*</item>
+		<item>/ucstar_plugins/ucmbfriends/ucmFriendsCommentData.jsp*</item>
+		<item>/ucstar_plugins/ucmbfriends/ucmFriendsCoverData.jsp*</item>
+		<item>/ucstar_plugins/ucmbfriends/ucmFriendsResourceData.jsp*</item>
+		<item>/ucstar_plugins/ucmbfriends/ucmFriendsShareData.jsp*</item>
+		<item>/ucstar_plugins/ucmbfriends/ucmbImageUploadTest.jsp*</item>
+		
+	</decorators>
+	<!-- 扩展一些接口 -->
+	<xmlservices>
+		<item></item>
+	</xmlservices>
+	<!-- 扩展一些协议 -->
+	<providers>
+	</providers>
+	<!-- 菜单扩展 -->
+	<menu>
+		<item id="tab-ucmfriendsplugin" label="工作圈" url="">
+			<children>
+				<item id="ucm_share" label="朋友圈分享" url="/ucstar_plugins/ucmbfriends/ucmFriendsShare.jsp"/>
+				<item id="ucm_res" label="朋友圈图片" url="/ucstar_plugins/ucmbfriends/ucmFriendsResource.jsp" />
+				<item id="ucm_cover" label="朋友圈封面" url="/ucstar_plugins/ucmbfriends/ucmFriendsCover.jsp" />
+				<item id="ucm_comment" label="朋友圈评论" url="/ucstar_plugins/ucmbfriends/ucmFriendsComment.jsp" />
+			</children>
+		</item>
+	</menu>
+</plugin>

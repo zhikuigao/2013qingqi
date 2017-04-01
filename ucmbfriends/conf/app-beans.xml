@@ -1,0 +1,63 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:zksp="http://www.zkoss.org/2008/zkspring" xmlns:zksp-annot="http://www.zkoss.org/2008/zkspring-annot"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.0.xsd
+	http://www.zkoss.org/2008/zkspring http://www.zkoss.org/2008/zkspring/zkspring.xsd
+	http://www.zkoss.org/2008/zkspring-annot http://www.zkoss.org/2008/zkspring-annot/zkspring-annot.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+	<bean id="qflag.ucstar.zk.biz.pojo.UcmFriendsComment.impl" class="qflag.ucstar.zk.ucmfriendscomment.dao.UcmFriendsCommentDaoImpl"></bean>
+	<bean id="qflag.ucstar.zk.biz.pojo.UcmFriendsComment.service.impl" class="qflag.ucstar.zk.ucmfriendscomment.service.impl.DefaultUcmFriendsCommentServiceImpl">
+		<property name="ucmFriendsCommentDao">
+			<ref local="qflag.ucstar.zk.biz.pojo.UcmFriendsComment.impl" />
+		</property>
+	</bean>
+	<bean id="qflag.ucstar.zk.biz.pojo.UcmFriendsComment.factory.impl" class="qflag.ucstar.zk.ucmfriendscomment.service.UcmFriendsCommentServiceFactory">
+		<property name="ucmFriendsCommentService">
+			<ref local="qflag.ucstar.zk.biz.pojo.UcmFriendsComment.service.impl" />
+		</property>
+	</bean>
+
+
+	<bean id="qflag.ucstar.zk.biz.pojo.UcmFriendsCover.impl" class="qflag.ucstar.zk.ucmfriendscover.dao.UcmFriendsCoverDaoImpl"></bean>
+	<bean id="qflag.ucstar.zk.biz.pojo.UcmFriendsCover.service.impl" class="qflag.ucstar.zk.ucmfriendscover.service.impl.DefaultUcmFriendsCoverServiceImpl">
+		<property name="ucmFriendsCoverDao">
+			<ref local="qflag.ucstar.zk.biz.pojo.UcmFriendsCover.impl" />
+		</property>
+	</bean>
+	<bean id="qflag.ucstar.zk.biz.pojo.UcmFriendsCover.factory.impl" class="qflag.ucstar.zk.ucmfriendscover.service.UcmFriendsCoverServiceFactory">
+		<property name="ucmFriendsCoverService">
+			<ref local="qflag.ucstar.zk.biz.pojo.UcmFriendsCover.service.impl" />
+		</property>
+	</bean>
+
+	<bean id="qflag.ucstar.zk.biz.pojo.UcmFriendsResource.impl" class="qflag.ucstar.zk.ucmfriendsresource.dao.UcmFriendsResourceDaoImpl"></bean>
+	<bean id="qflag.ucstar.zk.biz.pojo.UcmFriendsResource.service.impl" class="qflag.ucstar.zk.ucmfriendsresource.service.impl.DefaultUcmFriendsResourceServiceImpl">
+		<property name="ucmFriendsResourceDao">
+			<ref local="qflag.ucstar.zk.biz.pojo.UcmFriendsResource.impl" />
+		</property>
+	</bean>
+	<bean id="qflag.ucstar.zk.biz.pojo.UcmFriendsResource.factory.impl" class="qflag.ucstar.zk.ucmfriendsresource.service.UcmFriendsResourceServiceFactory">
+		<property name="ucmFriendsResourceService">
+			<ref local="qflag.ucstar.zk.biz.pojo.UcmFriendsResource.service.impl" />
+		</property>
+	</bean>
+
+	<bean id="qflag.ucstar.zk.biz.pojo.UcmFriendsShare.impl" class="qflag.ucstar.zk.ucmfriendsshare.dao.UcmFriendsShareDaoImpl"></bean>
+	<bean id="qflag.ucstar.zk.biz.pojo.UcmFriendsShare.service.impl" class="qflag.ucstar.zk.ucmfriendsshare.service.impl.DefaultUcmFriendsShareServiceImpl">
+		<property name="ucmFriendsShareDao">
+			<ref local="qflag.ucstar.zk.biz.pojo.UcmFriendsShare.impl" />
+		</property>
+	</bean>
+	<bean id="qflag.ucstar.zk.biz.pojo.UcmFriendsShare.factory.impl" class="qflag.ucstar.zk.ucmfriendsshare.service.UcmFriendsShareServiceFactory">
+		<property name="ucmFriendsShareService">
+			<ref local="qflag.ucstar.zk.biz.pojo.UcmFriendsShare.service.impl" />
+		</property>
+	</bean>
+
+</beans>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin>
+	<!-- 插件名称 -->
+	<name>ucpostbox</name>
+	<!-- 插件加载类 -->
+	<class>qflag.ucstar.plugin.ucpostbox.UcpostboxPluginModule</class>
+	<!-- 插件的说明 -->
+	<description>ucpostbox zh</description>
+	<author>rwli</author>
+	<version>1.0.0</version>
+	<date>2011-08-02</date>
+	<!-- 数据库版本号，如果<=0则表示没有数据库 -->
+	<dbversion>1</dbversion>
+	<!-- 排除一些不需要验证的页面 -->
+	<excludes>
+	<item>ucstar_plugins/adsync/UcpostConfigTag.jsp</item>
+	</excludes>
+	<!-- webwork的action配置 -->
+	<!-- 
+	<xwork>
+		<package name="xwork-extension.xml" extends="webwork-default">
+			<interceptors>
+				<interceptor-stack name="inter">
+					<interceptor-ref name="params" />
+				</interceptor-stack>
+			</interceptors>
+			<action name="extensionList"
+				class="qflag.ucstar.audio.services.action.ExtensionAction" method="listPage">
+				<result name="success" type="dispatcher">/extension-manager.jsp</result>
+				<result name="error" type="dispatcher">/error.jsp</result>
+				<interceptor-ref name="model-driven" />
+				<interceptor-ref name="params" />
+			</action>
+		</package>
+	</xwork>
+	-->
+	<!-- 需要排除的样式页面 -->
+	<decorators>
+		<item>/ucstar_plugins/ucpostbox/UcpostConfigTag.jsp*</item>
+	</decorators>
+	<!-- 扩展一些接口 -->
+	<xmlservices>
+		<item></item> 
+	</xmlservices>
+	<!-- 扩展一些协议 -->
+	<providers>
+	<item>qflag.ucstar.plugin.hanlde.IQXStandardAllAuthHandler</item>
+		
+	</providers>
+	<!-- 菜单扩展 -->
+	<menu>
+		<item id="tab-theadsync" label="邮件配置" type="sidebar">
+			<children>
+				<item id="ucpost-setting" label="配置页面" url="ucstar_plugins/ucpostbox/UcpostConfigTag.jsp" />
+			</children>
+		</item>
+	</menu>
+</plugin>
